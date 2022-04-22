@@ -11,7 +11,8 @@ USB_PORT = "/dev/ttyUSB0"
 
 
 def info(found_id_match: Match[str]) -> Tuple[str]:
-    time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    """Return a tuple reprensenting the match finger id info."""
+    time = datetime.now().strftime("%y-%m-%d %H:%M:%S")
     found_id = found_id_match.group(1)
     confidence = found_id_match.group(2)
     return (time, found_id, confidence)
@@ -22,7 +23,7 @@ def main() -> None:
     found_id_regex = re.compile(r"Found ID #(\d*) with confidence of (\d*)")
 
     with serial.Serial(USB_PORT, baudrate=9600) as serial_port, open(
-        "matches.csv", "a"
+        "matches.csv", "a", encoding="utf-8"
     ) as matches:
 
         csv_writer = csv.writer(matches)
