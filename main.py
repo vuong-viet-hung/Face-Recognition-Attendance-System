@@ -1,8 +1,9 @@
 import csv
-import datetime
 import logging
 import re
+from datetime import datetime
 from typing import Match, Tuple
+
 import serial
 
 
@@ -10,7 +11,7 @@ USB_PORT = "/dev/ttyUSB0"
 
 
 def info(found_id_match: Match[str]) -> Tuple[str]:
-    time = datetime.datetime.strftime("%Y-%m-%d %H:%M:%S")
+    time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     found_id = found_id_match.group(1)
     confidence = found_id_match.group(2)
     return (time, found_id, confidence)
