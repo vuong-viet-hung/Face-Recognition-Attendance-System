@@ -10,7 +10,7 @@ USB_PORT = "/dev/ttyUSB0"
 
 
 def info(found_id_match: Match[str]) -> Tuple[str]:
-    time = str(datetime.datetime.now())
+    time = datetime.datetime.strftime("%Y-%m-%d %H:%M:%S")
     found_id = found_id_match.group(1)
     confidence = found_id_match.group(2)
     return (time, found_id, confidence)
