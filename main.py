@@ -2,7 +2,7 @@ import csv
 import logging
 import re
 from datetime import datetime
-from typing import Match, Tuple
+from typing import Match, List
 
 import serial
 
@@ -10,12 +10,12 @@ import serial
 USB_PORT = "/dev/ttyUSB0"
 
 
-def info(found_id_match: Match[str]) -> Tuple[str]:
-    """Return a tuple reprensenting the match finger id info."""
+def info(found_id_match: Match[str]) -> List[str]:
+    """Return a tuple representing the match finger id info."""
     time = datetime.now().strftime("%y-%m-%d %H:%M:%S")
     found_id = found_id_match.group(1)
     confidence = found_id_match.group(2)
-    return (time, found_id, confidence)
+    return [time, found_id, confidence]
 
 
 def main() -> None:
