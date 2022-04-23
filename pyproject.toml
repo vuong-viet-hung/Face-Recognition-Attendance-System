@@ -8,6 +8,7 @@ authors = ["Vương Việt Hùng", "Trần Huy Khánh"]
 python = "^3.9"
 pyserial = "^3.5"
 black = "^22.3.0"
+mypy = "^0.942"
 
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"
