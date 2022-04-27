@@ -2,7 +2,7 @@ import csv
 import logging
 import re
 from datetime import datetime
-from typing import Match, List
+from typing import List, Match
 
 import serial
 
