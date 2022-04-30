@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "face-recognition-attendance-system"
 version = "0.1.0"
-description = ""
+description = "Face Recognition Attendance System registers new members using their fingerprints and face images. Member can then enroll by capturing their picture through a webcam."
 authors = ["Vương Việt Hùng", "Trần Huy Khánh"]
 
 [tool.poetry.dependencies]
