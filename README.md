@@ -12,12 +12,12 @@
 
 ## III. Project Flowchart
 ![Project Flowchart (without keypad)](Project_Flowchart-without_keypad.png "Project Flowchart (without keypad)")
-<div style="text-align: center;">Project Flowchart (without keypad)</div>
+<p style="text-align: center;">Project Flowchart (without keypad)</p>
 
 <br/>
 
 ![Project Flowchart (with keypad)](Project_Flowchart-with_keypad.png "Project Flowchart (with keypad)")
-<div style="text-align: center;">Project Flowchart (with keypad)</div>
+<p style="text-align: center;">Project Flowchart (with keypad)</p>
 
 ## IV. Installation
 The project uses [Poetry](https://python-poetry.org/) as packages and environment manager. In order to install Poetry, follow the [installation guide](https://python-poetry.org/docs/#osx--linux--bashonwindows-install-instructions). \
