@@ -45,7 +45,6 @@ If not, the program should assign the fingerprint with an increasing ID.
 ## IV. Installation
 The project uses [Poetry](https://python-poetry.org/) as packages and environment manager. In order to install Poetry, follow the [installation guide](https://python-poetry.org/docs/#osx--linux--bashonwindows-install-instructions). \
 Run the flowing commands inside the project directory:
-
 ```
 poetry install
 ```
