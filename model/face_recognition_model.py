@@ -1,8 +1,9 @@
+from pathlib import Path
+from typing import Dict, Optional
+
 import cv2
 import face_recognition
 import numpy as np
-from pathlib import Path
-from typing import Dict, Optional
 
 
 def path_to_label(image_path: Path):
