@@ -1,10 +1,13 @@
-from fras import Application
+from app import Application
+from model import FaceRecognitionModel
+from ui import CLI
+
 
 WEBCAM = 0
 
 
 def main() -> None:
-    app = Application()
+    app = Application(model=FaceRecognitionModel(), ui=CLI())
     app.capture_image(video_source=WEBCAM)
     app.display_prediction("data/reference_images")
 
