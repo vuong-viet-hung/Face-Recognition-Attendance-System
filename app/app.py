@@ -1,14 +1,16 @@
+from pathlib import Path
+from typing import Optional, Union
+
 import cv2
 import face_recognition
 import numpy as np
-from pathlib import Path
-from typing import Optional, Union
-from fras import FaceRecognitionModel
 
 
 class Application:
-    def __init__(self) -> None:
+    def __init__(self, model, ui) -> None:
         self.captured_images = Optional[np.ndarray]
+        self.model = model
+        self.ui = ui
 
     def capture_image(self, video_source: Union[int, str]) -> None:
         video = cv2.VideoCapture(video_source)
@@ -39,9 +41,8 @@ class Application:
             self.register_user(reference_images)
 
     def display_prediction(self, reference_images: str) -> None:
-        model = FaceRecognitionModel()
-        model.fit(reference_images)
-        user = model.predict(self.captured_images)
+        self.model.fit(reference_images)
+        user = self.model.predict(self.captured_images)
         if user is None:
             self.register_user(reference_images)
         else:
