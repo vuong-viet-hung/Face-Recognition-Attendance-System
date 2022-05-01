@@ -1,0 +1,1 @@
+from model.face_recognition_model import FaceRecognitionModel
