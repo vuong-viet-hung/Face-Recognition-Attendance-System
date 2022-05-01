@@ -31,4 +31,3 @@ to install project dependencies.
 poetry shell
 ```
 to activate the environment.
-```
