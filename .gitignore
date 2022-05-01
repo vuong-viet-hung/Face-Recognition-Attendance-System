@@ -5,3 +5,4 @@ data/
 data_preprocessing/original_dataset/
 data_preprocessing/preprocessed_dataset/
 data_preprocessing/RMFD.zip
+*/__pycache__/
