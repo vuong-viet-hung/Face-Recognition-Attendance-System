@@ -25,7 +25,7 @@ If not, the program should assign the fingerprint with an increasing ID.
 7. The member's fingerprint ID, student ID and the path to his/her face images is stored in the database.
 #### b. Enroll using image
 8. Webcam connected to Raspberry capture the member's face image.
-9. The program **(fras/)** compares the member's newly captured image with existing ones stored in the database.
+9. The program **(model/)** compares the member's newly captured image with existing ones stored in the database.
 10. The respected member's student ID is looked up in the database.
 11. The member's student ID and time of enrollment is then saved to a csv file **(serial_reader/matches.csv)**.
 
@@ -38,14 +38,13 @@ If not, the program should assign the fingerprint with an increasing ID.
 4. The member's fingerprint ID, student ID and the path to his/her face images is stored in the database.
 #### b. Enroll
 5. Webcam connected to Raspberry capture the member's face image.
-6. The program **(fras/)** compares the member's newly captured image with existing ones stored in the database.
+6. The program **(model/)** compares the member's newly captured image with existing ones stored in the database.
 7. The respected member's student ID is looked up in the database.
 8. The member's student ID and time of enrollment is then saved to a csv file **(serial_reader/matches.csv)**.
 
 ## IV. Installation
 The project uses [Poetry](https://python-poetry.org/) as packages and environment manager. In order to install Poetry, follow the [installation guide](https://python-poetry.org/docs/#osx--linux--bashonwindows-install-instructions). \
-Run the flowing command inside the project directory.
-
+Run the flowing commands inside the project directory:
 ```
 poetry install
 ```
