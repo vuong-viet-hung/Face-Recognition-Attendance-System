@@ -17,15 +17,15 @@ def encode_face(image: np.ndarray):
 
 class FaceRecognitionModel:
     def __init__(self) -> None:
-        self.classes: Optional[Dict[int, str]] = None
-        self.known_face_encodings: Optional[np.ndarray] = None
+        self.classes: Dict[int, str] = {}
+        self.known_face_encodings: np.ndarray = np.empty([0, 0, 128])
 
-    def fit(self, reference_images: str) -> None:
+    def fit(self, reference_images: Path) -> None:
         reference_images = Path(reference_images)
         labels = [
             path_to_label(image_path) for image_path in reference_images.iterdir()
         ]
-        self.classes = dict(zip(range(len(labels)), labels))
+        self.classes = dict(enumerate(labels))
         self.known_face_encodings = np.array(
             [
                 encode_face(cv2.imread(str(image_path)))
@@ -36,13 +36,15 @@ class FaceRecognitionModel:
     def predict(self, image: np.ndarray) -> Optional[str]:
         # There aren't any registered users.
         if not len(self.known_face_encodings):
-            return
+            return None
         face_encodings = encode_face(image)
         # There aren't any known matched faces.
         if not np.any(
-            face_recognition.compare_faces(self.known_face_encodings, face_encodings)
+            face_recognition.compare_faces(
+                self.known_face_encodings, face_encodings, tolerance=0.3
+            )
         ):
-            return
+            return None
         prediction = np.argmin(
             face_recognition.face_distance(self.known_face_encodings, face_encodings)
         )
