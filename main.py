@@ -1,6 +1,6 @@
 from app import Application
 from model import FaceRecognitionModel
-from ui import CLI
+from user_interface import CLI
 
 
 WEBCAM = 0
