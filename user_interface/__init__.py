@@ -1,2 +1,2 @@
-from ui.cli import CLI
-from ui.gui import GUI
+from user_interface.cli import CLI
+from user_interface.gui import GUI
