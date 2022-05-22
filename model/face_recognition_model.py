@@ -25,7 +25,7 @@ class FaceRecognitionModel:
         labels = [
             path_to_label(image_path) for image_path in reference_images.iterdir()
         ]
-        self.classes = dict(enumerate(labels))
+        self.classes.update(enumerate(labels))
         self.known_face_encodings = np.array(
             [
                 encode_face(cv2.imread(str(image_path)))
